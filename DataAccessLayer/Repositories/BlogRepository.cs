@@ -18,6 +18,11 @@ namespace DataAccessLayer.Repositories
             context.SaveChanges();
         }
 
+        public void Delete(Blog entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteBlogy(Blog blog)
         {
             using var context = new Context();
@@ -31,10 +36,25 @@ namespace DataAccessLayer.Repositories
             return context.Blogs.Find(id);
         }
 
+        public List<Blog> GetlistAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Blog entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Blog> ListAllBlog()
         {
             using var context = new Context();
             return context.Blogs.ToList();
+        }
+
+        public void Update(Blog entity)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateBlog(Blog blog)
