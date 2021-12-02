@@ -4,14 +4,16 @@ using DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20211201085418_WriterAndCityRElation")]
+    partial class WriterAndCityRElation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -272,13 +274,13 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Writer", b =>
                 {
-                    b.HasOne("EntityLayer.Concrete.City", "City")
-                        .WithMany("Writers")
+                    b.HasOne("EntityLayer.Concrete.City", "city")
+                        .WithMany("writers")
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("City");
+                    b.Navigation("city");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
@@ -293,7 +295,7 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.City", b =>
                 {
-                    b.Navigation("Writers");
+                    b.Navigation("writers");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Writer", b =>
