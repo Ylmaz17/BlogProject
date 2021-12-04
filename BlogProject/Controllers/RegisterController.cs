@@ -32,7 +32,6 @@ namespace BlogProject.Controllers
             {
                 writer.WriterAbout = "Yazar";
                 writer.WriterStatus = true;
-                writer.CityId = 46;
                 writerManager.WriterAdd(writer);
                 return RedirectToAction("Index", "Blog");
             }

@@ -40,9 +40,9 @@
                             @Html.ValidationMessageFor(x => x.WriterPassword, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group col-md-6">
-                                <label for="exampleInputPassword2 mb-2">Şifreyi Tekrar Giriniz</label>
-                                <input type="password" name="passwordAgain" class="form-control" id="password2" >
-                            </div>
+                            <label for="exampleInputPassword2 mb-2">Şifreyi Tekrar Giriniz</label>
+                            <input type="password" name="passwordAgain" class="form-control" id="password2">
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="exampleInputPassword2 mb-2">Şehir</label>
                             @Html.DropDownListFor(x => x.CityId, (List<SelectListItem>)ViewBag.Cities, new { @class = "form-control" })

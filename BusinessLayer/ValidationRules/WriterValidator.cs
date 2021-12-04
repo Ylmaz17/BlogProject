@@ -19,6 +19,7 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.WriterName).MinimumLength(2).WithMessage("Lütfen en az 2 karakter giriniz.");
             RuleFor(x => x.WriterName).MaximumLength(50).WithMessage("En fazla 50 karakter girebilirsiniz.");
             RuleFor(w => w.WriterPassword).Must(IsPasswordValid).WithMessage("Parolanızda en az bir küçük harf bir büyük harf ve rakam olmalıdır!");
+            RuleFor(x => x.CityId).NotEmpty().WithMessage("Şehir seçimi yapınız");
         }
         private bool IsPasswordValid(string arg)
         {
